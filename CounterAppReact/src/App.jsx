@@ -6,7 +6,10 @@ function App() {
   // let count = 0;
   // let a;
   let increment = ()=>{  setCounter(count+1);};
-  let decrement = ()=>{  setCounter(count-1);};
+  let decrement = ()=>{
+    if(count>0){
+    setCounter(count-1);
+  }};
 
 
   return(
