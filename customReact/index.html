@@ -1,0 +1,43 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,
+            initial-scale=1.0">
+        </head>
+        <body>
+            <div id="root"></div>
+            <script>
+                const reactElement = {
+                    type : 'a',
+                    props:{
+                        href:'https://google.com',
+                        target:'_blank'
+                    },
+                    children:'Click me to visit google'
+                };
+                const mainContainer=document.querySelector('#root');
+                // version 1
+                // const customRender=(reactEl,htmlEl)=>{
+                //     const TYPE = document.createElement(reactEl.type);
+                //     TYPE.setAttribute('href',reactEl.props.href);
+                //     TYPE.setAttribute('target',reactEl.props.target);
+                //     TYPE.innerHTML = reactEl.children;
+                //     htmlEl.appendChild (TYPE);
+                // };
+                // version 2
+                const customRender=(reactEl,htmlEl)=>{
+                    const TYPE = document.createElement(reactEl.type);
+                    // TYPE.setAttribute('href',reactEl.props.href);
+                    // TYPE.setAttribute('target',reactEl.props.target);
+                    for(const prop in reactEl.props){
+                        if(prop==='children'){continue;}
+                        TYPE.setAttribute(prop,reactElement.props[prop]);
+                    }
+                    TYPE.innerHTML = reactEl.children;
+                    htmlEl.appendChild (TYPE);
+                };
+                customRender(reactElement,mainContainer);
+            </script>
+        </body>
+    </html>
