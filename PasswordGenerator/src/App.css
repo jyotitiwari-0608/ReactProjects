@@ -1,0 +1,70 @@
+@import "tailwindcss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.password-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.password-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.password-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.password-box button:hover {
+  background: #2563eb;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 8px;
+}
